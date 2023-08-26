@@ -30,7 +30,8 @@ struct ItemRow: View {
 
                 Text(date)
                     .bold()
-                    .font(.caption)
+                    .font(.caption2)
+                    .foregroundColor(.gray)
             }
         }
         .listRowBackground(Color(.clear))
@@ -42,6 +43,6 @@ struct ItemRow_Previews: PreviewProvider {
         ItemRow(
             logo: "10d",
             temperature: "230°F to 250°F",
-            date: "12345")
+            date: "Aug 27, 2023")
     }
 }

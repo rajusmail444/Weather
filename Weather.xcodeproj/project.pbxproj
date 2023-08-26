@@ -28,6 +28,7 @@
 		E9AC51D52A9A2F1A00319A7D /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51D42A9A2F1A00319A7D /* ForecastView.swift */; };
 		E9AC51D92A9A310000319A7D /* ForecastData.json in Resources */ = {isa = PBXBuildFile; fileRef = E9AC51D82A9A310000319A7D /* ForecastData.json */; };
 		E9AC51DE2A9A359700319A7D /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51DD2A9A359700319A7D /* ItemRow.swift */; };
+		E9AC51E02A9A7A5600319A7D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		E9AC51D42A9A2F1A00319A7D /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		E9AC51D82A9A310000319A7D /* ForecastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ForecastData.json; sourceTree = "<group>"; };
 		E9AC51DD2A9A359700319A7D /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
+		E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AC51CE2A99B35000319A7D /* Extension.swift */,
+				E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				E9AC51C62A996E4600319A7D /* WeatherViewModel.swift in Sources */,
 				E9AC51D12A99CFBB00319A7D /* ForecastedWeatherModel.swift in Sources */,
 				E9AC51C32A996BC000319A7D /* CurrentWeatherModel.swift in Sources */,
+				E9AC51E02A9A7A5600319A7D /* RoundedCorner.swift in Sources */,
 				E9AC51BB2A9957EF00319A7D /* WelcomeView.swift in Sources */,
 				E9AC51C82A99B18100319A7D /* LoadData.swift in Sources */,
 			);

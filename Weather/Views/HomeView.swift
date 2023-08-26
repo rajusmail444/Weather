@@ -53,7 +53,7 @@ struct HomeView: View {
                         }
 
                         Text(currentWeather.main.feelsLike.roundDouble() + "°")
-                            .font(.system(size: 60))
+                            .font(.system(size: 75))
                             .fontWeight(.bold)
 
                         Text("F")
@@ -62,6 +62,7 @@ struct HomeView: View {
                     Text(currentWeather.weather[0].description.capitalizingFirstLetter())
                         .font(.system(size: 35))
                         .fontWeight(.light)
+                        .foregroundColor(Color(.systemBackground))
 
                     Spacer()
                 }
