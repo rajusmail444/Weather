@@ -15,6 +15,6 @@
 "fahrenheit" = "°F";
 "today" = "Today";
 "invalid.url" = "Invalid URL";
-"unexpected.status.code" = "Unexpected response error";
+"unexpected.status.code" = "Sorry we are currently facing network issue, please try after some time.";
 "unknown.error" = "Unknown error";
 "location.not.available" = "Location not available@";

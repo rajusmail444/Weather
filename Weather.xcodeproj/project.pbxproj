@@ -31,6 +31,7 @@
 		E9AC51E02A9A7A5600319A7D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */; };
 		E9AC51E42A9A7C8300319A7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9AC51E62A9A7C8300319A7D /* Localizable.strings */; };
 		E9B1C0382A9A9B4A00607545 /* ActionSheetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */; };
+		E9B1C03A2A9AB53100607545 /* ToastErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C0392A9AB53100607545 /* ToastErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		E9AC51E52A9A7C8300319A7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetErrorView.swift; sourceTree = "<group>"; };
+		E9B1C0392A9AB53100607545 /* ToastErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */,
+				E9B1C0392A9AB53100607545 /* ToastErrorView.swift */,
 			);
 			path = ErrorHandling;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				E9AC51DE2A9A359700319A7D /* ItemRow.swift in Sources */,
 				E9AC51CC2A99B26B00319A7D /* HomeView.swift in Sources */,
 				E9AC51CF2A99B35000319A7D /* Extension.swift in Sources */,
+				E9B1C03A2A9AB53100607545 /* ToastErrorView.swift in Sources */,
 				E9AC51B82A99520300319A7D /* LocationManager.swift in Sources */,
 				E9AC51D52A9A2F1A00319A7D /* ForecastView.swift in Sources */,
 				E9AC51BD2A99643C00319A7D /* LoadingView.swift in Sources */,

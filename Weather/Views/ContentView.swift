@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel: WeatherViewModel
+    @State private var showError = false
 
     init(viewModel: WeatherViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
+
 
     var body: some View {
         VStack {
@@ -25,8 +27,6 @@ struct ContentView: View {
                     .refreshable {
                         viewModel.fetchData()
                     }
-                } else if viewModel.currentWeatherError != nil {
-
                 } else {
                     LoadingView()
                         .task {
@@ -43,6 +43,20 @@ struct ContentView: View {
             }
         }
         .background(Color(.systemFill))
+        .overlay {
+            if showError {
+                VStack {
+                    ToastErrorView()
+                        .environmentObject(viewModel)
+                    Spacer()
+                }.transition(.move(edge: .top))
+            }
+        }
+        .transition(.move(edge: .top))
+        .animation(.default, value: viewModel.currentWeatherError)
+        .onChange(of: viewModel.currentWeatherError) { error in
+            showError = error != nil
+        }
     }
 }
 

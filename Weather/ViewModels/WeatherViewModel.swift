@@ -39,6 +39,7 @@ final class WeatherViewModel: ObservableObject {
     }
 
     func fetchData() {
+        isLoading = true
         fetchCurrentWeather()
         fetchForecastedWeather()
     }
