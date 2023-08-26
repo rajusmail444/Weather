@@ -1,5 +1,5 @@
 //
-//  CurrentLocationModel.swift
+//  CurrentWeatherResponse.swift
 //  Weather
 //
 //  Created by Rajesh Billakanti on 8/25/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CurrentLocationResponse: Decodable {
+struct CurrentWeatherResponse: Decodable {
     var coord: CoordinatesResponse
     var weather: [WeatherResponse]
     var main: MainResponse
@@ -41,7 +41,7 @@ struct CurrentLocationResponse: Decodable {
     }
 }
 
-extension CurrentLocationResponse.MainResponse {
+extension CurrentWeatherResponse.MainResponse {
     var feelsLike: Double { return feels_like }
     var tempMin: Double { return temp_min }
     var tempMax: Double { return temp_max }

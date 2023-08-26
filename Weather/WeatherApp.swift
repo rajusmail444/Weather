@@ -13,7 +13,8 @@ struct WeatherApp: App {
         WindowGroup {
             ContentView(
                 viewModel: WeatherViewModel(
-                    locationManager: LocationManager()
+                    locationManager: LocationManager(),
+                    networkManager: NetworkManager()
                 )
             )
         }

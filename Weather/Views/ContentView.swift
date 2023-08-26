@@ -16,9 +16,15 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            if let longitude = viewModel.longitude,
-                let latitude = viewModel.latitude {
-                Text("Your coordinates are: \(longitude), \(latitude)")
+            if viewModel.isLocationAvailable {
+                if let weather = viewModel.weather {
+                    HomeView(currentWeather: weather)
+                } else {
+                    LoadingView()
+                        .task {
+                            viewModel.fetchData()
+                        }
+                }
             } else {
                 if viewModel.isLoading {
                     LoadingView()
@@ -36,7 +42,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             viewModel: WeatherViewModel(
-                locationManager: LocationManager()
+                locationManager: LocationManager(),
+                networkManager: NetworkManager()
             )
         )
     }
