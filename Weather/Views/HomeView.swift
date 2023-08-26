@@ -8,21 +8,37 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: WeatherViewModel
     var currentWeather: CurrentWeather
     var forecastWeather: ForecastedWeather
 
     var body: some View {
         ZStack(alignment: .leading) {
             VStack {
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(currentWeather.name)
-                        .bold().font(.title)
+                HStack {
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text(currentWeather.name)
+                            .bold().font(.title)
 
-                    Text(currentWeather.main.time)
-                        .fontWeight(.light)
+                        Text(currentWeather.main.time)
+                            .fontWeight(.light)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    Button {
+                        viewModel.fetchData()
+                    } label: {
+                        Image(systemName: "arrow.clockwise.circle")
+                            .font(.system(size: 30))
+                            .tint(Color(.systemBackground))
+                    }
+                    Button {
+                        print("~~> search button was tapped")
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                            .font(.system(size: 30))
+                            .tint(Color(.systemBackground))
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-
                 Spacer()
 
                 VStack(alignment: .center) {

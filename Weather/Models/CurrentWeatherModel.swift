@@ -46,7 +46,7 @@ extension CurrentWeather.MainResponse {
     var tempMin: Double { temp_min }
     var tempMax: Double { temp_max }
     var time: String {
-        "Today, \(Date().formatted(.dateTime.month().day().year()))"
+        "Today, \(Date().formatted(.dateTime.month().day().minute().second()))"
     }
 }
 

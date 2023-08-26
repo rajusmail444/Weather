@@ -33,6 +33,7 @@ struct ItemRow: View {
                     .font(.caption)
             }
         }
+        .listRowBackground(Color(.clear))
     }
 }
 

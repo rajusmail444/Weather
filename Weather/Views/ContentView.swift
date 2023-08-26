@@ -21,7 +21,13 @@ struct ContentView: View {
                     let forecast = viewModel.forecastedWeather {
                     HomeView(
                         currentWeather: currentWeather,
-                        forecastWeather: forecast)
+                        forecastWeather: forecast
+                    )
+                    .environmentObject(viewModel)
+                    .refreshable {
+                        print("~~> Pull to refresh")
+                        viewModel.fetchData()
+                    }
                 } else {
                     LoadingView()
                         .task {
