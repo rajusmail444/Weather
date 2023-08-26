@@ -14,15 +14,15 @@ struct WelcomeView: View {
     var body: some View {
         VStack {
             VStack(spacing: 20) {
-                Text("Welcome")
+                Text(LocalizedStringKey("welcome"))
                     .bold()
                     .font(.largeTitle)
                 
-                Text("Weather Forecast")
+                Text(LocalizedStringKey("weather.forecast"))
                     .bold()
                     .font(.title2)
                 
-                Text("Please share your current location to get the weather in your area")
+                Text(LocalizedStringKey("location.permission.info"))
                     .multilineTextAlignment(.center)
                     .padding()
                 

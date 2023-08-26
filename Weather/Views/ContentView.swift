@@ -17,17 +17,16 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if viewModel.isLocationAvailable {
-                if let currentWeather = viewModel.currentWeather,
-                    let forecast = viewModel.forecastedWeather {
+                if let currentWeather = viewModel.currentWeather {
                     HomeView(
-                        currentWeather: currentWeather,
-                        forecastWeather: forecast
+                        currentWeather: currentWeather
                     )
                     .environmentObject(viewModel)
                     .refreshable {
-                        print("~~> Pull to refresh")
                         viewModel.fetchData()
                     }
+                } else if viewModel.currentWeatherError != nil {
+
                 } else {
                     LoadingView()
                         .task {

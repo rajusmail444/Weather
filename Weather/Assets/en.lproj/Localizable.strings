@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Weather
+
+  Created by Rajesh Billakanti on 8/26/23.
+  
+*/
+
+"welcome" = "Welcome";
+"weather.forecast" = "Weather Forecast";
+"reload.weather.forecast" = "Reload Weather Forecast";
+"location.permission.info" = "Please share your current location to get the weather in your area";
+"daily.forecast" = "Daily Forecast";
+"pull.to.refresh" = "Pull to refresh";
+"fahrenheit" = "°F";
+"today" = "Today";
+"invalid.url" = "Invalid URL";
+"unexpected.status.code" = "Unexpected response error";
+"unknown.error" = "Unknown error";
+"location.not.available" = "Location not available@";

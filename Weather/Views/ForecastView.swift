@@ -17,7 +17,7 @@ struct ForecastView: View {
         VStack {
             Spacer()
             VStack(alignment: .leading) {
-                Text("Daily Forecast")
+                Text(LocalizedStringKey("daily.forecast"))
                     .bold()
                     .padding(.leading)
                     .padding(.top)
@@ -27,7 +27,7 @@ struct ForecastView: View {
                     Image(systemName: "hand.point.down")
                         .font(.system(size: 20))
                         .foregroundColor(Color(.systemOrange))
-                    Text("Pull to refresh")
+                    Text(LocalizedStringKey("pull.to.refresh"))
                         .font(.body)
                         .foregroundColor(Color(.systemOrange))
                 }

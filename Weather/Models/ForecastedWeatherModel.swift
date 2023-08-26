@@ -22,7 +22,7 @@ extension DaysResponse {
         weather[0].icon
     }
     var temperature: String {
-        "\(temp.min)°F to \(temp.max)°F"
+        "\(temp.min)\("fahrenheit".localized()) to \(temp.max)\("fahrenheit".localized())"
     }
     var date: String {
         "\(Date(timeIntervalSince1970: TimeInterval(dt)).formatted(.dateTime.month().day().year()))"

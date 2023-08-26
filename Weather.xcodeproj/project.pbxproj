@@ -29,6 +29,8 @@
 		E9AC51D92A9A310000319A7D /* ForecastData.json in Resources */ = {isa = PBXBuildFile; fileRef = E9AC51D82A9A310000319A7D /* ForecastData.json */; };
 		E9AC51DE2A9A359700319A7D /* ItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51DD2A9A359700319A7D /* ItemRow.swift */; };
 		E9AC51E02A9A7A5600319A7D /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */; };
+		E9AC51E42A9A7C8300319A7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9AC51E62A9A7C8300319A7D /* Localizable.strings */; };
+		E9B1C0382A9A9B4A00607545 /* ActionSheetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		E9AC51D82A9A310000319A7D /* ForecastData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ForecastData.json; sourceTree = "<group>"; };
 		E9AC51DD2A9A359700319A7D /* ItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRow.swift; sourceTree = "<group>"; };
 		E9AC51DF2A9A7A5600319A7D /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		E9AC51E52A9A7C8300319A7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 		E9AC518B2A9949AE00319A7D /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC51E12A9A7C5A00319A7D /* Assets */,
 				E9AC51DA2A9A34F900319A7D /* Components */,
 				E9AC51CD2A99B33500319A7D /* Helpers */,
 				E9AC51C12A996B8E00319A7D /* Models */,
@@ -132,7 +137,6 @@
 				E9AC51B92A99571700319A7D /* Views */,
 				E9AC51B62A9951D200319A7D /* Managers */,
 				E9AC518C2A9949AE00319A7D /* WeatherApp.swift */,
-				E9AC51902A9949AF00319A7D /* Assets.xcassets */,
 				E9AC51922A9949AF00319A7D /* Preview Content */,
 			);
 			path = Weather;
@@ -177,6 +181,7 @@
 		E9AC51B92A99571700319A7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC51E72A9A979C00319A7D /* ErrorHandling */,
 				E9AC518E2A9949AE00319A7D /* ContentView.swift */,
 				E9AC51BA2A9957EF00319A7D /* WelcomeView.swift */,
 				E9AC51BC2A99643C00319A7D /* LoadingView.swift */,
@@ -226,6 +231,23 @@
 				E9AC51DD2A9A359700319A7D /* ItemRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E9AC51E12A9A7C5A00319A7D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E9AC51902A9949AF00319A7D /* Assets.xcassets */,
+				E9AC51E62A9A7C8300319A7D /* Localizable.strings */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E9AC51E72A9A979C00319A7D /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */,
+			);
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AC51E42A9A7C8300319A7D /* Localizable.strings in Resources */,
 				E9AC51CA2A99B1DD00319A7D /* WeatherData.json in Resources */,
 				E9AC51942A9949AF00319A7D /* Preview Assets.xcassets in Resources */,
 				E9AC51D92A9A310000319A7D /* ForecastData.json in Resources */,
@@ -361,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9AC51C02A99667100319A7D /* NetworkManager.swift in Sources */,
+				E9B1C0382A9A9B4A00607545 /* ActionSheetErrorView.swift in Sources */,
 				E9AC518F2A9949AE00319A7D /* ContentView.swift in Sources */,
 				E9AC518D2A9949AE00319A7D /* WeatherApp.swift in Sources */,
 				E9AC51DE2A9A359700319A7D /* ItemRow.swift in Sources */,
@@ -409,6 +433,17 @@
 			targetProxy = E9AC51A42A9949AF00319A7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E9AC51E62A9A7C8300319A7D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9AC51E52A9A7C8300319A7D /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E9AC51AB2A9949AF00319A7D /* Debug */ = {

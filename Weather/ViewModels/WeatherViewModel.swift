@@ -15,6 +15,8 @@ final class WeatherViewModel: ObservableObject {
     @Published var isLocationAvailable = false
     @Published var currentWeather: CurrentWeather?
     @Published var forecastedWeather: ForecastedWeather?
+    @Published var currentWeatherError: String?
+    @Published var forecastedWeatherError: String?
     private var latitude: CLLocationDegrees?
     private var longitude: CLLocationDegrees?
 
@@ -50,10 +52,18 @@ final class WeatherViewModel: ObservableObject {
             type: CurrentWeather.self
         )
         .receive(on: DispatchQueue.main)
-        .sink { _ in
-        } receiveValue: { [weak self] response in
-            self?.currentWeather = response
-        }
+        .sink(
+            receiveCompletion: {[weak self] completion in
+                if case let .failure(error) = completion {
+                    self?.currentWeatherError = (error as? NetworkError)?.errorDescription
+                }
+                print("~~> currentWeatherError: \(self?.currentWeatherError)")
+                self?.isLoading = false
+            },
+            receiveValue: { [weak self] response in
+                self?.currentWeather = response
+            }
+        )
         .store(in: &cancellable)
     }
 
@@ -66,10 +76,18 @@ final class WeatherViewModel: ObservableObject {
             type: ForecastedWeather.self
         )
         .receive(on: DispatchQueue.main)
-        .sink { _ in
-        } receiveValue: { [weak self] response in
-            self?.forecastedWeather = response
-        }
+        .sink(
+            receiveCompletion: {[weak self] completion in
+                if case let .failure(error) = completion {
+                    self?.forecastedWeatherError = (error as? NetworkError)?.errorDescription
+                }
+
+                self?.isLoading = false
+            },
+            receiveValue: { [weak self] response in
+                self?.forecastedWeather = response
+            }
+        )
         .store(in: &cancellable)
     }
 

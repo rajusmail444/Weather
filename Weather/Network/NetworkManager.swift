@@ -9,12 +9,6 @@ import Foundation
 import CoreLocation
 import Combine
 
-enum NetworkError: Error {
-    case invalidURL
-    case responseError
-    case unknown
-}
-
 enum Endpoint {
     case currentLocation(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees)
     case forecast(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees, _ days: Int)
@@ -71,15 +65,21 @@ final class NetworkManager {
     }
 }
 
+enum NetworkError: Error {
+    case invalidURL
+    case responseError
+    case unknown
+}
+
 extension NetworkError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("Invalid URL", comment: "Invalid URL")
+            return "invalid.url".localized()
         case .responseError:
-            return NSLocalizedString("Unexpected status code", comment: "Invalid response")
+            return "unexpected.status.code".localized()
         case .unknown:
-            return NSLocalizedString("Unknown error", comment: "Unknown error")
+            return "unknown.error".localized()
         }
     }
 }
