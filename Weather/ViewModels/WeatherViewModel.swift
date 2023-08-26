@@ -13,7 +13,7 @@ import Combine
 final class WeatherViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isLocationAvailable = false
-    @Published var weather: CurrentWeatherResponse?
+    @Published var weather: CurrentWeather?
     private var latitude: CLLocationDegrees?
     private var longitude: CLLocationDegrees?
 
@@ -41,7 +41,7 @@ final class WeatherViewModel: ObservableObject {
         }
         networkManager.getData(
             endpoint: .currentLocation(latitude, longitude),
-            type: CurrentWeatherResponse.self
+            type: CurrentWeather.self
         )
         .receive(on: DispatchQueue.main)
         .sink { _ in

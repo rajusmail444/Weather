@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    var currentWeather: CurrentWeatherResponse
+    var currentWeather: CurrentWeather
 
     var body: some View {
         ZStack(alignment: .leading) {
