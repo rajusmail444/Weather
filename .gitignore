@@ -44,6 +44,7 @@
 
     #Xcode
     *.xcuserstate
+    *.xcuserdatad*
     
     # Office Temp Files
     ~$*

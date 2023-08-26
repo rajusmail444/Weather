@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var locationManager = LocationManager()
-    
+    @StateObject var viewModel: WeatherViewModel
+
+    init(viewModel: WeatherViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         VStack {
-            if let location = locationManager.location {
-                Text("Your coordinates are: \(location.longitude), \(location.latitude)")
+            if let longitude = viewModel.longitude,
+                let latitude = viewModel.latitude {
+                Text("Your coordinates are: \(longitude), \(latitude)")
             } else {
-                if locationManager.isLoading {
-                    ProgressView()
+                if viewModel.isLoading {
+                    LoadingView()
                 } else {
                     WelcomeView()
-                        .environmentObject(locationManager)
+                        .environmentObject(viewModel)
                 }
             }
         }
@@ -29,6 +34,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            viewModel: WeatherViewModel(
+                locationManager: LocationManager()
+            )
+        )
     }
 }
