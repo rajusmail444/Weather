@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var currentWeather: CurrentWeather
+    var forecastWeather: ForecastedWeather
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -17,7 +18,7 @@ struct HomeView: View {
                     Text(currentWeather.name)
                         .bold().font(.title)
 
-                    Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
+                    Text(currentWeather.main.time)
                         .fontWeight(.light)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -53,21 +54,7 @@ struct HomeView: View {
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            VStack {
-                Spacer()
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("Daily Forecast")
-                        .bold()
-                        .font(.title2)
-                        .padding(.bottom)
-                }
-                .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.size.height/2.2, alignment: .leading)
-                .padding()
-                .padding(.bottom, 20)
-                .foregroundColor(.black)
-                .background(.white)
-                .cornerRadius(20, corners: [.topLeft, .topRight])
-            }
+            ForecastView(forecastWeather: forecastWeather)
         }
         .edgesIgnoringSafeArea(.bottom)
         .background(Color(.systemCyan))
@@ -76,6 +63,9 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(currentWeather: previewWeather)
+        HomeView(
+            currentWeather: previewCurrentWeather,
+            forecastWeather: previewForecastWeather
+        )
     }
 }

@@ -1,0 +1,192 @@
+{
+  "city": {
+    "id": 3163858,
+    "name": "Zocca",
+    "coord": {
+      "lon": 10.99,
+      "lat": 44.34
+    },
+    "country": "IT",
+    "population": 4593,
+    "timezone": 7200
+  },
+  "cod": "200",
+  "message": 5.0665523,
+  "cnt": 5,
+  "list": [
+    {
+      "dt": 1693047600,
+      "sunrise": 1693024291,
+      "sunset": 1693073093,
+      "temp": {
+        "day": 304.82,
+        "min": 292.11,
+        "max": 305.22,
+        "night": 293.58,
+        "eve": 301.11,
+        "morn": 292.11
+      },
+      "feels_like": {
+        "day": 303.71,
+        "night": 293.06,
+        "eve": 300.59,
+        "morn": 291.52
+      },
+      "pressure": 1010,
+      "humidity": 31,
+      "weather": [
+        {
+          "id": 800,
+          "main": "Clear",
+          "description": "sky is clear",
+          "icon": "01d"
+        }
+      ],
+      "speed": 3.89,
+      "deg": 201,
+      "gust": 6.61,
+      "clouds": 1,
+      "pop": 0
+    },
+    {
+      "dt": 1693134000,
+      "sunrise": 1693110761,
+      "sunset": 1693159390,
+      "temp": {
+        "day": 299.78,
+        "min": 290.61,
+        "max": 301.18,
+        "night": 293.05,
+        "eve": 297.39,
+        "morn": 290.61
+      },
+      "feels_like": {
+        "day": 299.78,
+        "night": 292.92,
+        "eve": 297.31,
+        "morn": 290.03
+      },
+      "pressure": 1008,
+      "humidity": 41,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "light rain",
+          "icon": "10d"
+        }
+      ],
+      "speed": 3.33,
+      "deg": 204,
+      "gust": 7.08,
+      "clouds": 100,
+      "pop": 0.33,
+      "rain": 0.19
+    },
+    {
+      "dt": 1693220400,
+      "sunrise": 1693197231,
+      "sunset": 1693245686,
+      "temp": {
+        "day": 292.53,
+        "min": 284.9,
+        "max": 294.04,
+        "night": 284.9,
+        "eve": 286.52,
+        "morn": 288.15
+      },
+      "feels_like": {
+        "day": 292.17,
+        "night": 284.64,
+        "eve": 286.26,
+        "morn": 287.98
+      },
+      "pressure": 1000,
+      "humidity": 63,
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "moderate rain",
+          "icon": "10d"
+        }
+      ],
+      "speed": 5.47,
+      "deg": 160,
+      "gust": 11.14,
+      "clouds": 65,
+      "pop": 0.86,
+      "rain": 13.55
+    },
+    {
+      "dt": 1693306800,
+      "sunrise": 1693283700,
+      "sunset": 1693331981,
+      "temp": {
+        "day": 284.13,
+        "min": 283.48,
+        "max": 284.57,
+        "night": 284.38,
+        "eve": 284.39,
+        "morn": 283.86
+      },
+      "feels_like": {
+        "day": 283.82,
+        "night": 283.91,
+        "eve": 284,
+        "morn": 283.52
+      },
+      "pressure": 1005,
+      "humidity": 97,
+      "weather": [
+        {
+          "id": 501,
+          "main": "Rain",
+          "description": "moderate rain",
+          "icon": "10d"
+        }
+      ],
+      "speed": 2.91,
+      "deg": 319,
+      "gust": 7.13,
+      "clouds": 100,
+      "pop": 0.91,
+      "rain": 17.7
+    },
+    {
+      "dt": 1693393200,
+      "sunrise": 1693370169,
+      "sunset": 1693418275,
+      "temp": {
+        "day": 289.94,
+        "min": 284.7,
+        "max": 289.94,
+        "night": 284.7,
+        "eve": 286.19,
+        "morn": 285.86
+      },
+      "feels_like": {
+        "day": 289.35,
+        "night": 284.34,
+        "eve": 285.8,
+        "morn": 285.51
+      },
+      "pressure": 1008,
+      "humidity": 64,
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "light rain",
+          "icon": "10d"
+        }
+      ],
+      "speed": 2.3,
+      "deg": 27,
+      "gust": 2.58,
+      "clouds": 98,
+      "pop": 0.5,
+      "rain": 1.28
+    }
+  ]
+}

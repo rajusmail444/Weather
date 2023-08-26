@@ -17,8 +17,11 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if viewModel.isLocationAvailable {
-                if let weather = viewModel.weather {
-                    HomeView(currentWeather: weather)
+                if let currentWeather = viewModel.currentWeather,
+                    let forecast = viewModel.forecastedWeather {
+                    HomeView(
+                        currentWeather: currentWeather,
+                        forecastWeather: forecast)
                 } else {
                     LoadingView()
                         .task {

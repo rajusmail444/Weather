@@ -13,7 +13,8 @@ import Combine
 final class WeatherViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isLocationAvailable = false
-    @Published var weather: CurrentWeather?
+    @Published var currentWeather: CurrentWeather?
+    @Published var forecastedWeather: ForecastedWeather?
     private var latitude: CLLocationDegrees?
     private var longitude: CLLocationDegrees?
 
@@ -36,6 +37,11 @@ final class WeatherViewModel: ObservableObject {
     }
 
     func fetchData() {
+        fetchCurrentWeather()
+        fetchForecastedWeather()
+    }
+
+    private func fetchCurrentWeather() {
         guard let latitude, let longitude else {
             return
         }
@@ -46,7 +52,23 @@ final class WeatherViewModel: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { _ in
         } receiveValue: { [weak self] response in
-            self?.weather = response
+            self?.currentWeather = response
+        }
+        .store(in: &cancellable)
+    }
+
+    private func fetchForecastedWeather() {
+        guard let latitude, let longitude else {
+            return
+        }
+        networkManager.getData(
+            endpoint: .forecast(latitude, longitude, 6),
+            type: ForecastedWeather.self
+        )
+        .receive(on: DispatchQueue.main)
+        .sink { _ in
+        } receiveValue: { [weak self] response in
+            self?.forecastedWeather = response
         }
         .store(in: &cancellable)
     }
