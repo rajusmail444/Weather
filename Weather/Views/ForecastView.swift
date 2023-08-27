@@ -64,6 +64,6 @@ struct ForecastView: View {
 
 struct ForecastView_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastView(forecastWeather: previewForecastWeather)
+        ForecastView(forecastWeather: FileLoader.shared.previewForecastWeather)
     }
 }

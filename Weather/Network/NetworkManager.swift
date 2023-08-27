@@ -9,6 +9,10 @@ import Foundation
 import CoreLocation
 import Combine
 
+protocol NetworkManagerType {
+    func getData<T: Decodable>(endpoint: Endpoint, type: T.Type) -> Future<T, Error>
+}
+
 enum Endpoint {
     case geoLocation(_ city: String)
     case currentWeather(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees)
@@ -28,7 +32,7 @@ extension Endpoint {
     }
 }
 
-final class NetworkManager {
+final class NetworkManager: NetworkManagerType {
     private enum Constants {
         static let baseURL = "https://api.openweathermap.org"
         static let apiKey: String = "&appid=8bf352fcd95e743683b4dcf992a6e46e"

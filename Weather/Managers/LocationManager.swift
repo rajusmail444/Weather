@@ -8,7 +8,13 @@
 import Foundation
 import CoreLocation
 
-final class LocationManager: NSObject, ObservableObject {
+protocol LocationManagerType: AnyObject {
+    var location: CLLocationCoordinate2D? { get }
+    var locationError: LocationError? { get }
+    func requestLocation()
+}
+
+class LocationManager: NSObject, ObservableObject, LocationManagerType {
     private let manager = CLLocationManager()
     
     @Published var location: CLLocationCoordinate2D?

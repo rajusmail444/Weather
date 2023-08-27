@@ -19,10 +19,10 @@ struct DaysResponse: Codable, Hashable {
 
 extension DaysResponse {
     var logo: String {
-        weather[0].icon
+        "https://openweathermap.org/img/wn/\(weather[0].icon)@2x.png"
     }
     var temperature: String {
-        "\(temp.min)\("fahrenheit".localized()) to \(temp.max)\("fahrenheit".localized())"
+        "\(temp.min.roundDouble())\("fahrenheit".localized()) to \(temp.max.roundDouble())\("fahrenheit".localized())"
     }
     var date: String {
         "\(Date(timeIntervalSince1970: TimeInterval(dt)).formatted(.dateTime.month().day().year()))"

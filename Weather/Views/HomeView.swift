@@ -43,7 +43,7 @@ struct HomeView: View {
 
                 VStack(alignment: .center) {
                     HStack() {
-                        AsyncImage(url: URL(string: "https://openweathermap.org/img/wn/\(currentWeather.weather[0].icon)@2x.png")) { image in
+                        AsyncImage(url: URL(string: currentWeather.logo)) { image in
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -52,14 +52,14 @@ struct HomeView: View {
                             ProgressView()
                         }
 
-                        Text(currentWeather.main.feelsLike.roundDouble())
+                        Text(currentWeather.main.feelsLike)
                             .font(.system(size: 65))
                             .fontWeight(.bold)
 
                         Text(LocalizedStringKey("fahrenheit"))
                             .font(.system(size: 65))
                     }.padding(.top)
-                    Text(currentWeather.weather[0].description.capitalizingFirstLetter())
+                    Text(currentWeather.description)
                         .font(.system(size: 35))
                         .fontWeight(.light)
                         .foregroundColor(Color(.systemBackground))
@@ -95,7 +95,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(
-            currentWeather: previewCurrentWeather
+            currentWeather: FileLoader.shared.previewCurrentWeather
         )
         .environmentObject(WeatherViewModel(
             locationManager: LocationManager(),

@@ -19,16 +19,17 @@ final class WeatherViewModel: ObservableObject {
     @Published var toastError: Bool = false
     @Published var toastErrorMessage: String = ""
     @Published var toastButtonTitle: String = ""
-    private var latitude: CLLocationDegrees?
-    private var longitude: CLLocationDegrees?
 
     var cancellable = Set<AnyCancellable>()
+
+    private(set) var latitude: CLLocationDegrees?
+    private(set) var longitude: CLLocationDegrees?
     private var locationManager: LocationManager
-    private var networkManager: NetworkManager
+    private var networkManager: NetworkManagerType
 
     init(
         locationManager: LocationManager,
-        networkManager: NetworkManager
+        networkManager: NetworkManagerType
     ) {
         self.locationManager = locationManager
         self.networkManager = networkManager

@@ -14,7 +14,7 @@ struct ItemRow: View {
 
     var body: some View {
         HStack(spacing: 20) {
-            AsyncImage(url: URL(string: "https://openweathermap.org/img/wn/\(logo)@2x.png")) { image in
+            AsyncImage(url: URL(string: logo)) { image in
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -41,7 +41,7 @@ struct ItemRow: View {
 struct ItemRow_Previews: PreviewProvider {
     static var previews: some View {
         ItemRow(
-            logo: "10d",
+            logo: "https://openweathermap.org/img/wn/10d@2x.png",
             temperature: "230°F to 250°F",
             date: "Aug 27, 2023")
     }

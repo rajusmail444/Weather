@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Dallas",
+    "local_names": {
+      "uk": "Даллас",
+      "zh": "达拉斯/達拉斯",
+      "ru": "Даллас",
+      "en": "Dallas",
+      "ar": "دالاس",
+      "fr": "Dallas",
+      "oc": "Dallas",
+      "kn": "ಡಲ್ಲಾಸ್",
+      "pt": "Dallas",
+      "ja": "ダラス"
+    },
+    "lat": 32.7762719,
+    "lon": -96.7968559,
+    "country": "US",
+    "state": "Texas"
+  }
+]
