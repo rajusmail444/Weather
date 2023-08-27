@@ -51,3 +51,9 @@ extension CurrentWeather.MainResponse {
 }
 
 
+
+struct GeoLocationModel: Codable {
+    var name: String
+    var lat: Double
+    var lon: Double
+}

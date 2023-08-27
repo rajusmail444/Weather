@@ -15,8 +15,10 @@ final class WeatherViewModel: ObservableObject {
     @Published var isLocationAvailable = false
     @Published var currentWeather: CurrentWeather?
     @Published var forecastedWeather: ForecastedWeather?
-    @Published var currentWeatherError: String?
     @Published var forecastedWeatherError: String?
+    @Published var toastError: Bool = false
+    @Published var toastErrorMessage: String = ""
+    @Published var toastButtonTitle: String = ""
     private var latitude: CLLocationDegrees?
     private var longitude: CLLocationDegrees?
 
@@ -38,8 +40,41 @@ final class WeatherViewModel: ObservableObject {
         locationManager.requestLocation()
     }
 
+    func fetchData(for city: String) {
+        guard !city.isEmpty else {
+            return
+        }
+        networkManager.getData(
+            endpoint: .geoLocation(city),
+            type: [GeoLocationModel].self
+        )
+        .receive(on: DispatchQueue.main)
+        .sink(
+            receiveCompletion: {[weak self] completion in
+                if case .failure = completion {
+                    self?.toastError = true
+                    self?.toastErrorMessage = NetworkError.locationError.errorDescription ?? "unknown.error".localized()
+                    self?.toastButtonTitle = "ok".localized()
+                }
+                self?.isLoading = false
+            },
+            receiveValue: { [weak self] response in
+                if let location = response.first {
+                    self?.latitude = location.lat
+                    self?.longitude = location.lon
+                    self?.fetchData()
+                } else {
+                    self?.toastError = true
+                    self?.toastErrorMessage = NetworkError.locationError.errorDescription ?? "unknown.error".localized()
+                    self?.toastButtonTitle = "ok".localized()
+                }
+
+            }
+        )
+        .store(in: &cancellable)
+    }
+
     func fetchData() {
-        isLoading = true
         fetchCurrentWeather()
         fetchForecastedWeather()
     }
@@ -49,16 +84,17 @@ final class WeatherViewModel: ObservableObject {
             return
         }
         networkManager.getData(
-            endpoint: .currentLocation(latitude, longitude),
+            endpoint: .currentWeather(latitude, longitude),
             type: CurrentWeather.self
         )
         .receive(on: DispatchQueue.main)
         .sink(
             receiveCompletion: {[weak self] completion in
                 if case let .failure(error) = completion {
-                    self?.currentWeatherError = (error as? NetworkError)?.errorDescription
+                    self?.toastError = true
+                    self?.toastErrorMessage = (error as? NetworkError)?.errorDescription ?? "unknown.error".localized()
+                    self?.toastButtonTitle = "reload.weather.forecast".localized()
                 }
-                print("~~> currentWeatherError: \(self?.currentWeatherError)")
                 self?.isLoading = false
             },
             receiveValue: { [weak self] response in
@@ -101,9 +137,6 @@ final class WeatherViewModel: ObservableObject {
                 self.isLocationAvailable = true
                 self.latitude = self.locationManager.location?.latitude
                 self.longitude = self.locationManager.location?.longitude
-                if self.locationManager.locationError == .notAvailable {
-                    print("~~> Location Failed")
-                }
             }
             .store(in: &cancellable)
     }

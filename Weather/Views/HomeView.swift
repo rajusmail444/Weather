@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: WeatherViewModel
+    @State private var showCityView = false
     var currentWeather: CurrentWeather
 
     var body: some View {
@@ -31,7 +32,7 @@ struct HomeView: View {
                             .tint(Color(.systemBackground))
                     }
                     Button {
-                        print("~~> search button was tapped")
+                        showCityView.toggle()
                     } label: {
                         Image(systemName: "magnifyingglass")
                             .font(.system(size: 30))
@@ -79,6 +80,15 @@ struct HomeView: View {
         }
         .edgesIgnoringSafeArea(.bottom)
         .background(Color(.systemCyan))
+        .overlay {
+            if showCityView {
+                VStack {
+                    CityView(isPresented: $showCityView)
+                        .environmentObject(viewModel)
+                    Spacer()
+                }.transition(.move(edge: .top))
+            }
+        }
     }
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var viewModel: WeatherViewModel
-    @State private var showError = false
+    @State private var showToastError = false
 
     init(viewModel: WeatherViewModel) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -44,18 +44,22 @@ struct ContentView: View {
         }
         .background(Color(.systemFill))
         .overlay {
-            if showError {
+            if showToastError {
                 VStack {
-                    ToastErrorView()
-                        .environmentObject(viewModel)
+                    ToastErrorView(
+                        isPresented: $showToastError,
+                        errorDesc: viewModel.toastErrorMessage,
+                        buttonTitle: viewModel.toastButtonTitle
+                    ) {
+                        viewModel.fetchData()
+                    }
                     Spacer()
                 }.transition(.move(edge: .top))
             }
         }
-        .transition(.move(edge: .top))
-        .animation(.default, value: viewModel.currentWeatherError)
-        .onChange(of: viewModel.currentWeatherError) { error in
-            showError = error != nil
+        .animation(.default, value: viewModel.toastErrorMessage)
+        .onChange(of: viewModel.toastError) { error in
+            showToastError = error
         }
     }
 }

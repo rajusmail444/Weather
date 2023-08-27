@@ -7,14 +7,18 @@
 */
 
 "welcome" = "Welcome";
+"weather" = "Weather";
+"ok" = "OK";
 "weather.forecast" = "Weather Forecast";
 "reload.weather.forecast" = "Reload Weather Forecast";
-"location.permission.info" = "Please share your current location to get the weather in your area";
+"location.permission.info" = "Please share your current location to get the weather forecast in your location.";
 "daily.forecast" = "Daily Forecast";
 "pull.to.refresh" = "Pull to refresh";
-"fahrenheit" = "°F";
+"fahrenheit" = "°C";
 "today" = "Today";
 "invalid.url" = "Invalid URL";
 "unexpected.status.code" = "Sorry we are currently facing network issue, please try after some time.";
 "unknown.error" = "Unknown error";
 "location.not.available" = "Location not available@";
+"city.weather.not.available" = "Entered city weather is not available please enter another city.";
+"city.name.empty" = "City name should not be empty";

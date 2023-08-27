@@ -32,6 +32,7 @@
 		E9AC51E42A9A7C8300319A7D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9AC51E62A9A7C8300319A7D /* Localizable.strings */; };
 		E9B1C0382A9A9B4A00607545 /* ActionSheetErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */; };
 		E9B1C03A2A9AB53100607545 /* ToastErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C0392A9AB53100607545 /* ToastErrorView.swift */; };
+		E9B1C03C2A9AC52700607545 /* CityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B1C03B2A9AC52700607545 /* CityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		E9AC51E52A9A7C8300319A7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9B1C0372A9A9B4A00607545 /* ActionSheetErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSheetErrorView.swift; sourceTree = "<group>"; };
 		E9B1C0392A9AB53100607545 /* ToastErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastErrorView.swift; sourceTree = "<group>"; };
+		E9B1C03B2A9AC52700607545 /* CityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				E9AC51E12A9A7C5A00319A7D /* Assets */,
-				E9AC51DA2A9A34F900319A7D /* Components */,
 				E9AC51CD2A99B33500319A7D /* Helpers */,
 				E9AC51C12A996B8E00319A7D /* Models */,
 				E9AC51BE2A99665B00319A7D /* Network */,
@@ -183,6 +184,7 @@
 		E9AC51B92A99571700319A7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E9AC51DA2A9A34F900319A7D /* Components */,
 				E9AC51E72A9A979C00319A7D /* ErrorHandling */,
 				E9AC518E2A9949AE00319A7D /* ContentView.swift */,
 				E9AC51BA2A9957EF00319A7D /* WelcomeView.swift */,
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				E9AC51DD2A9A359700319A7D /* ItemRow.swift */,
+				E9B1C03B2A9AC52700607545 /* CityView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				E9AC51DE2A9A359700319A7D /* ItemRow.swift in Sources */,
 				E9AC51CC2A99B26B00319A7D /* HomeView.swift in Sources */,
 				E9AC51CF2A99B35000319A7D /* Extension.swift in Sources */,
+				E9B1C03C2A9AC52700607545 /* CityView.swift in Sources */,
 				E9B1C03A2A9AB53100607545 /* ToastErrorView.swift in Sources */,
 				E9AC51B82A99520300319A7D /* LocationManager.swift in Sources */,
 				E9AC51D52A9A2F1A00319A7D /* ForecastView.swift in Sources */,

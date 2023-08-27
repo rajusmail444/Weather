@@ -10,24 +10,27 @@ import CoreLocation
 import Combine
 
 enum Endpoint {
-    case currentLocation(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees)
+    case geoLocation(_ city: String)
+    case currentWeather(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees)
     case forecast(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees, _ days: Int)
 }
 
 extension Endpoint {
     var params: String {
         switch self {
-        case .currentLocation(let latitude, let longitude):
-            return "/weather?lat=\(latitude)&lon=\(longitude)"
+        case .geoLocation(let city):
+            return "/geo/1.0/direct?q=\(city)&limit=1"
+        case .currentWeather(let latitude, let longitude):
+            return "/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&units=metric"
         case .forecast(let latitude, let longitude, let days):
-            return "/forecast/daily?lat=\(latitude)&lon=\(longitude)&cnt=\(days)"
+            return "/data/2.5/forecast/daily?lat=\(latitude)&lon=\(longitude)&cnt=\(days)&units=metric"
         }
     }
 }
 
 final class NetworkManager {
     enum Constants {
-        static let baseURL = "https://api.openweathermap.org/data/2.5"
+        static let baseURL = "https://api.openweathermap.org"
         static let apiKey: String = "&appid=8bf352fcd95e743683b4dcf992a6e46e"
 
     }
@@ -38,7 +41,6 @@ final class NetworkManager {
             guard let self = self, let url = URL(string: Constants.baseURL.appending(endpoint.params).appending(Constants.apiKey)) else {
                 return promise(.failure(NetworkError.invalidURL))
             }
-            print("~~> URL is \(url.absoluteString)")
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap { (data, response) -> Data in
                     guard let httpResponse = response as? HTTPURLResponse, 200...299 ~= httpResponse.statusCode else {
@@ -66,6 +68,7 @@ final class NetworkManager {
 }
 
 enum NetworkError: Error {
+    case locationError
     case invalidURL
     case responseError
     case unknown
@@ -74,6 +77,8 @@ enum NetworkError: Error {
 extension NetworkError: LocalizedError {
     var errorDescription: String? {
         switch self {
+        case .locationError:
+            return "city.weather.not.available".localized()
         case .invalidURL:
             return "invalid.url".localized()
         case .responseError:
