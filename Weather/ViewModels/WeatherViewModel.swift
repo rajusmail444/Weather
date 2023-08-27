@@ -134,9 +134,9 @@ final class WeatherViewModel: ObservableObject {
             .sink {[weak self] _ in
                 guard let self else { return }
                 self.isLoading = false
-                self.isLocationAvailable = true
                 self.latitude = self.locationManager.location?.latitude
                 self.longitude = self.locationManager.location?.longitude
+                self.isLocationAvailable = self.latitude != nil
             }
             .store(in: &cancellable)
     }
