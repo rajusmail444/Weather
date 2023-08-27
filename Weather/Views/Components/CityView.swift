@@ -23,7 +23,7 @@ struct CityView: View {
             .overlay {
                 VStack {
                     VStack {
-                        TextField("Enter city name", text: $cityName, onEditingChanged: { isChanged in
+                        TextField(LocalizedStringKey("enter.city.name"), text: $cityName, onEditingChanged: { isChanged in
                             cityNameError = !isChanged
                         })
                         .textFieldStyle(RoundedBorderTextFieldStyle())

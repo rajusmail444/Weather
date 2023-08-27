@@ -51,6 +51,7 @@ struct ContentView: View {
                         errorDesc: viewModel.toastErrorMessage,
                         buttonTitle: viewModel.toastButtonTitle
                     ) {
+                        viewModel.toastError = false
                         viewModel.fetchData()
                     }
                     Spacer()
