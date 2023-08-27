@@ -47,17 +47,17 @@ struct HomeView: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 120, height: 120)
+                                .frame(width: 110, height: 110)
                         } placeholder: {
                             ProgressView()
                         }
 
                         Text(currentWeather.main.feelsLike.roundDouble())
-                            .font(.system(size: 75))
+                            .font(.system(size: 65))
                             .fontWeight(.bold)
 
                         Text(LocalizedStringKey("fahrenheit"))
-                            .font(.system(size: 75))
+                            .font(.system(size: 65))
                     }.padding(.top)
                     Text(currentWeather.weather[0].description.capitalizingFirstLetter())
                         .font(.system(size: 35))
