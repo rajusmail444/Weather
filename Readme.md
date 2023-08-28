@@ -18,8 +18,11 @@ However, there is substantial room for improvement. In the current state of the 
 ## Functionality:
 
 Displaying screenshots to explain the functionality.
+[Video](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Weather.mov)
 
-![Location Request](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Location.png){ width=50% }
+App video!
+
+![Location Request](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Location.png)
 
 I made the app request location information every time it's launched. Since the main focus of the app is weather, I didn't extensively explore advanced location features and how to manage them in-depth.
 
@@ -28,7 +31,11 @@ I made the app request location information every time it's launched. Since the 
 
 The app requests your current location and uses it to show you the weather on the Home screen. This includes the current weather conditions as well as the forecasted weather for the upcoming days. This way, you can quickly see the weather information you need right when you open the app.
 
-![]
+![City search](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Search%20City%20Weather.png) ![City name validation](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/CityValidation.png) 
+
+Search weather with city name
+
+![CurrentWeather Error](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Current%20Weather%20API%20Error.png) ![Forecasted Weather Error](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Forecast%20API%20Error.png)
 
 
 
