@@ -18,7 +18,7 @@ However, there is substantial room for improvement. In the current state of the 
 ## Functionality:
 
 Displaying screenshots to explain the functionality.
-[Home](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Weather.gif)
+![Home](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Weather.gif)
 
 
 
