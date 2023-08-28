@@ -19,7 +19,7 @@ However, there is substantial room for improvement. In the current state of the 
 
 Displaying screenshots to explain the functionality.
 
-![Location Request](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Location.png =250x)
+![Location Request](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Location.png){ width=50% }
 
 I made the app request location information every time it's launched. Since the main focus of the app is weather, I didn't extensively explore advanced location features and how to manage them in-depth.
 
