@@ -11,6 +11,14 @@ I chose simple and familiar colors that are commonly used on iOS, and the images
 To make the user experience even better, I added some subtle animations to make things more engaging. I used straightforward images that are easy to understand, so users can quickly grasp the information. 
 
 ## Networking & Data Parsing:
+I employed generics within Combine to create a flexible system for making API calls that works for different types of data. I also utilized enums to effectively manage various error scenarios, providing clear error messages for each situation.
+
+However, there is substantial room for improvement. In the current state of the app, security and environmental considerations were not given priority. To make the app suitable for production, we can address these concerns. For instance, we can develop considering different environments such as QA, staging, and production, ensuring that the app behaves consistently across these contexts. Moreover, we can implement better security practices by securely hiding sensitive information like API keys. Exploring techniques like SSL pinning and adhering to app transport security guidelines will further enhance the app's security posture. These improvements will help make the app robust and ready for real-world deployment.
+
+## Functionality:
+
+Displaying screenshots to explain the functionality.
+[Home](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Weather.gif)
 
 
 
