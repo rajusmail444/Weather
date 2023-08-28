@@ -18,7 +18,17 @@ However, there is substantial room for improvement. In the current state of the 
 ## Functionality:
 
 Displaying screenshots to explain the functionality.
+
+![Location Request](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Location.png)
+
+I made the app request location information every time it's launched. Since the main focus of the app is weather, I didn't extensively explore advanced location features and how to manage them in-depth.
+
+
 ![Home](https://github.com/rajusmail444/Weather/blob/main/Images%20for%20Readme/Weather.gif)
+
+Requests for current location and displays Home screen with current weather and forecasted weather.
+
+
 
 
 
